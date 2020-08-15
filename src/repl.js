@@ -29,7 +29,7 @@ const repl = async () => {
 if (require.main === module) {
   console.log(
     chalk.red(
-      `Welcome to the ${chalk.bgYellow('Bisosai')} Programming Language`,
+      `Welcome to the ${chalk.bgYellow('bisosai')} Programming Language`,
     ),
   );
   repl();
