@@ -65,7 +65,7 @@ const tokenize = input => {
       cursor++;
       continue;
     }
-
+// Syntax error handler
     throw new Error(`${character} is not valid`);
   }
   return tokens;
