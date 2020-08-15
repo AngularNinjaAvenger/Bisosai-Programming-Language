@@ -1,15 +1,9 @@
 const { isOpeningParenthesis, isClosingParenthesis } = require('./identify');
 const { specialForms } = require('./special-forms');
-const {
-  isNumberToken,
-  isStringToken,
-  isNameToken,
-  numericLiteralTokenCreator,
-  stringLiteralTokenCreator,
-  identifierTokenCreator,
-} = require('./helpers/token-helpers');
 const { peek, pop } = require('./utilities');
 
+
+// here we are handling case for nested for loop
 const parenthesize = tokens => {
   const token = pop(tokens);
 
@@ -39,16 +33,25 @@ const parse = tokens => {
 
   const token = tokens;
 
-  if (isNumberToken(token)) {
-    return numericLiteralTokenCreator(token);
+  if (token.type === 'Number') {
+    return {
+      type: 'NumericLiteral',
+      value: token.value,
+    };
   }
 
-  if (isStringToken(token)) {
-    return stringLiteralTokenCreator(token);
+  if (token.type === 'String') {
+    return {
+      type: 'StringLiteral',
+      value: token.value,
+    };
   }
 
-  if (isNameToken(token)) {
-    return identifierTokenCreator(token);
+  if (token.type === 'Name') {
+    return {
+      type: 'Identifier',
+      name: token.value,
+    };
   }
 };
 

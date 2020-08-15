@@ -33,41 +33,49 @@ const tokenize = input => {
       while (isNumber(input[++cursor])) {
         number += input[cursor];
       }
+
       tokens.push({
         type: 'Number',
-        value: parseInt(number),
+        value: parseInt(number, 10),
       });
+
       continue;
     }
 
     if (isLetter(character)) {
-      let characters = character;
+      let symbol = character;
 
       while (isLetter(input[++cursor])) {
-        characters += input[cursor];
+        symbol += input[cursor];
       }
+
       tokens.push({
         type: 'Name',
-        value: characters,
+        value: symbol,
       });
+
       continue;
     }
 
     if (isQuote(character)) {
       let string = '';
-      while (isLetter(input[++cursor])) {
+
+      while (!isQuote(input[++cursor])) {
         string += input[cursor];
       }
+
       tokens.push({
         type: 'String',
         value: string,
       });
+
       cursor++;
       continue;
     }
-// Syntax error handler
+
     throw new Error(`${character} is not valid`);
   }
+
   return tokens;
 };
 
