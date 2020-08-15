@@ -1,0 +1,14 @@
+compiler
+	converts high level language to low level language
+
+
+stages of a compiler
+
+1. Parsing:
+	take the sources code and turn it into a representation of that code. 
+
+2. Transformation:
+	Take that source code and transforms it to do what the compiler wants it to do.
+
+3. Generation:
+  	Takes the transformed representation and turns it into a new string of code
