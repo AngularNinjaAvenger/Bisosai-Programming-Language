@@ -1,0 +1,80 @@
+compiler
+	converts high level language to low level language
+
+
+stages of a compiler
+
+1. Parsing:
+	take the sources code and turn it into a representation of that code,breaking it into tokens 
+
+2. Transformation:
+	Take that source code and transforms it to do what the compiler wants it to do.
+
+3. Generation:
+  	Takes the transformed representation and turns it into a new string of code.
+
+
+Parsing
+
+we don't want every character in our string we want the pieces the key word we can use to form a token
+
+Lexical analysis
+	this is when we take the entire string and convert it into token.
+
+Extracting token
+
+1. accept an input string of code
+2. create a variable for tracing or position like a cursor
+3. make an array of token
+4. write a while loop that iterates thorught the source code input.
+5. chec each token see if it matches one of your types
+6. add it to the array of token . 
+	
+
+syntatic analysis
+
+	making sense of the token we just extracted
+
+building an AST
+
+1. iterate through the array of tokens
+
+2.  for each number,string etc add that token to same level of the tree
+
+3. for each callExpression eg funtion collect the parameters and then recurse down into the function body
+
+view the image AST.png image,when you have that structure you'll be able to represent the code 
+
+
+Building a REPL
+now what a repl is,is that you read evaluate print loop
+
+this is how we run our code.
+
+after completing 
+
+run npm link ---> this will install the package like globally
+
+run bisosai
+
+it will run the programming language
+
+run bisosai index.bs
+
+will execute the code in bs
+
+
+
+generation 
+
+parsing in reverse this is where you take your code and parse it reverse back to javascript or to another language
+
+
+
+steps
+
+1. write your own low level cpu instruction compiler (terrible idea)
+2. use a compiler framework LLVM
+3. target the JVM
+4 transpilers because it's 2019
+
