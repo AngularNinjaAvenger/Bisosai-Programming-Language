@@ -3,7 +3,7 @@ const { specialForms } = require('./special-forms');
 const { peek, pop } = require('./utilities');
 
 
-// here we are handling case for nested for loop
+// here we are handling case for nested (())
 const parenthesize = tokens => {
   const token = pop(tokens);
 
