@@ -1,19 +1,19 @@
 
 
 {
-  "name": "dropbear",
+  "name": "bisosai",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "bin": {
-    "dropbear": "bin/dropbear"
+    "bisosai": "bin/bisosai"
   },
   "scripts": {
     "start": "node src/repl.js",
     "test": "jest"
   },
   "keywords": [],
-  "author": "Steve Kinney <hello@stevekinney.net> (https://stevekinney.net)",
+  "author": "Emhonfubhegbe Osayi Bishop <osayibishop@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.4.5",
